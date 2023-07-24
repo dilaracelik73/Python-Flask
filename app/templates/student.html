@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Sayfası</title>
+</head>
+<body>
+<form action ="{{ url_for('Result')}}" method="post">
+    <p> Öğrencinin İsmini Giriniz: <input type="text" name="name"/></p>
+    <p> Öğrencinin Fizik Notunu Giriniz: <input type="text" name="physics"/> </p>
+    <p> Öğrencinin Matematik Notunu Giriniz: <input type="text" name="matematics"/> </p>
+    <p> Öğrencinin Kimya Notunu Giriniz: <input type="text" name="chemistry"/> </p>
+    <p> <input type="submit" value=" Gönder" /></p>
+
+</form>
+</body>
+</html>
