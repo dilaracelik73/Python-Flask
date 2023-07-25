@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Web Sayfası</title>
+</head>
+<body>
+<h3> {{isim}}</h3>
+<hr>
+{% if sayı== 1%}
+<h3> gelen sayı 1</h3>
+{% else %}
+<h3> gelen sayı başka bir şeydir.</h3>
+{% endif %}
+
+<hr>
+{% for sehirler in liste%}
+<li> {{ sehirler}} </li>
+{% endfor %}
+
+<hr>
+<form method="post">
+    <input type="text" name="arama" class="input" placeholder="Arama"  />
+    <button type="submit"  class="btn btn-primary">Ara</button>
+    <h3> {{ mesaj}}</h3>
+
+</form>
+</body>
+</html>
