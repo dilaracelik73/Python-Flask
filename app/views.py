@@ -23,7 +23,7 @@ def Definition ():
 
 def Index ():
     isim="Dilara Çelik"
-    sayı=5
+    sayı=5  #sayı değişimleri yapıldı.
     liste=[ "ankara","adana", "istanbul","izmir","bursa"]
 
     if request.method=="POST":
@@ -38,6 +38,13 @@ def Index ():
             return render_template("index.html", isim=isim, sayı=sayı, liste=liste,mesaj=mesaj )
 
     return render_template("index.html", isim=isim, sayı=sayı, liste=liste, )
+
+#filtrelemeler yapıldı.
+@app.route("/jinjafiltre")
+def Jinja():
+    isim="Dilara Çelik"
+    stuff= " this is <strong> Bold </strong> Text"
+    return render_template("jinja.html",isim=isim,stuff=stuff)
 
 
 @app.route("/hello")
@@ -91,14 +98,11 @@ def Result():
     #   print(name)
     #except BadSignature:
     #   print("badsignature")
-
-
     #signer_name=signer.sign("ahmet")
     #response=make_response(" <html><body><h1> İLK FLASK DENEMESİ</h1></body></html>")
     #response.set_cookie("key",signer_name)
-    #return response     # her işlem yapıldıktan sonra CRTL+C ile kapatacağız.
-                                                                         #FLASK_ENV=development ile sürekli açıp kapatma olayına çözüm bulmuş olacağız.
-                                                                            # html kodu ile de yazım yapabiliriz.
+    #return response
+
 
 
 
