@@ -19,27 +19,27 @@ def Definition ():
     session["username"]="ahmet123"
     return (" <html><body><h1> İLK FLASK DENEMESİ</h1></body></html>")
 
+@app.route("/index",methods=["GET","POST"])
+
+def Index ():
+    isim="Dilara Çelik"
+    sayı=5
+    liste=[ "ankara","adana", "istanbul","izmir","bursa"]
+
+    if request.method=="POST":
+        iller = ["ankara", "adana", "istanbul", "izmir", "bursa"]
+        kelime=request.form.get("arama")
+        if kelime in iller:
+            mesaj=" aranan il iller listesinin içinde bulunmaktadır."
+            return render_template("index.html", isim=isim, sayı=sayı, liste=liste,mesaj=mesaj )
+
+        else:
+            mesaj=" aranan il iller listesinde bulunmamaktadır."
+            return render_template("index.html", isim=isim, sayı=sayı, liste=liste,mesaj=mesaj )
+
+    return render_template("index.html", isim=isim, sayı=sayı, liste=liste, )
 
 
-
-
-
-
-    #signer = Signer("secret key")
-    #signer_name=request.cookies.get("key")
-    #try:
-    #    name=signer.unsign(signer_name).decode()
-    #   print(name)
-    #except BadSignature:
-    #   print("badsignature")
-
-
-    #signer_name=signer.sign("ahmet")
-    #response=make_response(" <html><body><h1> İLK FLASK DENEMESİ</h1></body></html>")
-    #response.set_cookie("key",signer_name)
-    #return response     # her işlem yapıldıktan sonra CRTL+C ile kapatacağız.
-                                                                         #FLASK_ENV=development ile sürekli açıp kapatma olayına çözüm bulmuş olacağız.
-                                                                            # html kodu ile de yazım yapabiliriz.
 @app.route("/hello")
 def Hello():
     return render_template("hello.html")
@@ -83,7 +83,22 @@ def Result():
     chemistry =request.form["chemistry"]
     return render_template("student_result.html",name=name,physics=physics,matematics=matematics,chemistry=chemistry)
 
+#COOKIE TANIMLAMSI YAPILMIŞTI:
+    #signer = Signer("secret key")
+    #signer_name=request.cookies.get("key")
+    #try:
+    #    name=signer.unsign(signer_name).decode()
+    #   print(name)
+    #except BadSignature:
+    #   print("badsignature")
 
+
+    #signer_name=signer.sign("ahmet")
+    #response=make_response(" <html><body><h1> İLK FLASK DENEMESİ</h1></body></html>")
+    #response.set_cookie("key",signer_name)
+    #return response     # her işlem yapıldıktan sonra CRTL+C ile kapatacağız.
+                                                                         #FLASK_ENV=development ile sürekli açıp kapatma olayına çözüm bulmuş olacağız.
+                                                                            # html kodu ile de yazım yapabiliriz.
 
 
 
