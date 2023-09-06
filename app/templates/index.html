@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Flask Web Sayfası</title>
 </head>
+    <!-- sayfaya if else kontrolü ve loop özellikleri atandı-->
 <body>
 <h3> {{isim}}</h3>
 <hr>
@@ -12,12 +13,13 @@
 {% else %}
 <h3> gelen sayı başka bir şeydir.</h3>
 {% endif %}
-
+    <!-- sayfada ana kod bölümünde girilen şehirler sayfası görüntülenecek-->
 <hr>
 {% for sehirler in liste%}
 <li> {{ sehirler}} </li>
 {% endfor %}
 
+    <!-- aşağıda buton eklemesi ve arama kısmı eklendi. Ayrıca arama bölümüne has özelliklerin eklenme işlemleri yapıldı.-->
 <hr>
 <form method="post">
     <input type="text" name="arama" class="input" placeholder="Arama"  />
