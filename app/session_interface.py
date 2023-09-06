@@ -4,6 +4,7 @@ from flask.sessions import SessionMixin , SessionInterface
 from flask import request
 from itsdangerous import Signer,BadSignature,want_bytes
 
+#Session yapısı kullanılarak aslında şifreleme işlemleri nasıl yapılabilir, göz önünde bulunduruldu.
 class MySession(dict,SessionMixin):
     def __init__(self,initial=None,sessionId=None):
         self.initial=initial
